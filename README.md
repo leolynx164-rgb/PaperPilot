@@ -1,20 +1,25 @@
 # PaperPilot AI
 
-Assistant IA personnel pour **Linux** : discuter avec un modèle, retrouver des fichiers et lancer des actions, depuis une **commande rapide** 
-L'objectif est d'avoir un assisant de gestion de fichier rapide  et simple *"Un genre d'agent ia minimaliste"*
+**Un assistant IA minimaliste pour Linux.**
 
+PaperPilot AI permet d'interagir avec un modèle d'intelligence artificielle, de retrouver des fichiers et de lancer des actions depuis une commande rapide.
 
+Conçu pour simplifier la gestion des fichiers, il combine la recherche, l'assistance IA et l'exécution d'actions dans une interface légère et accessible.
 
-![Conversation](docs/captures/05-conversation-recherche.png)
+![Conversation avec PaperPilot AI](docs/captures/05-conversation-recherche.png)
+
+## Aperçu
 
 | Fenêtre flottante | Confirmation d'une action |
-|---|---|
-| ![Flottante](docs/captures/17-flottante-resultats.png) | ![Confirmation](docs/captures/06-confirmation.png) |
+|:---:|:---:|
+| ![Résultats dans la fenêtre flottante](docs/captures/17-flottante-resultats.png) | ![Confirmation d'une action](docs/captures/06-confirmation.png) |
 
-*(captures réelles prises par `npm run test:e2e`)*
-
-
+*Captures d'écran réelles issues des tests end-to-end (`npm run test:e2e`).*
 
 ## Licence
 
-Code : MIT. Polices Newsreader et Instrument Sans : SIL OFL. Icônes : Lucide (ISC). Les licences sont dans `src/renderer/assets/fonts/`.
+- **Code source :** [MIT](LICENSE)
+- **Polices :** Newsreader et Instrument Sans — [SIL Open Font License](https://openfontlicense.org/)
+- **Icônes :** Lucide — ISC
+
+Les licences des ressources graphiques sont disponibles dans `src/renderer/assets/fonts/`.
