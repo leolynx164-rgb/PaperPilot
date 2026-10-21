@@ -1,0 +1,89 @@
+{
+  "name": "paperpilot-ai",
+  "productName": "PaperPilot AI",
+  "version": "0.1.0",
+  "description": "Assistant IA personnel pour Kubuntu : chat flottant, recherche de fichiers et actions sécurisées.",
+  "main": "src/main/index.js",
+  "author": "PaperPilot AI",
+  "license": "MIT",
+  "homepage": "https://github.com/votre-compte/paperpilot-ai",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "test": "node --test test/*.test.js",
+    "test:e2e": "xvfb-run -a -s \"-screen 0 1400x1000x24\" electron scripts/e2e.js --no-sandbox ./captures",
+    "prepare-assets": "node scripts/prepare-assets.js",
+    "make-icons": "xvfb-run -a electron scripts/make-icons.js --no-sandbox",
+    "dist": "electron-builder --linux AppImage deb",
+    "dist:appimage": "electron-builder --linux AppImage",
+    "dist:deb": "electron-builder --linux deb",
+    "dist:dir": "electron-builder --linux dir"
+  },
+  "devDependencies": {
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "electron": "^44.7.2",
+    "electron-builder": "^26.15.3",
+    "lucide-static": "^1.57.0"
+  },
+  "build": {
+    "appId": "ai.paperpilot.desktop",
+    "productName": "PaperPilot AI",
+    "copyright": "PaperPilot AI",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "asar": true,
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "executableName": "paperpilot-ai",
+      "icon": "build/icons",
+      "maintainer": "PaperPilot AI <paperpilot@localhost>",
+      "synopsis": "Assistant IA personnel",
+      "description": "Assistant IA personnel : discuter avec un modèle, retrouver des fichiers et lancer des actions depuis une fenêtre flottante.",
+      "desktop": {
+        "entry": {
+          "Name": "PaperPilot AI",
+          "Comment": "Assistant IA personnel : discuter, retrouver des fichiers, lancer des actions",
+          "GenericName": "Assistant IA",
+          "Keywords": "IA;assistant;chat;fichiers;recherche;",
+          "StartupNotify": "true"
+        }
+      },
+      "syncDesktopName": true
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1",
+        "libsecret-1-0"
+      ],
+      "recommends": [
+        "poppler-utils",
+        "unzip",
+        "libglib2.0-bin"
+      ]
+    }
+  },
+  "desktopName": "paperpilot-ai.desktop"
+}
